@@ -1,0 +1,22 @@
+.barcodes img {
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+    background: white;
+    padding: 10px;
+}
+
+.barcode-type a {
+  display: block;
+  color: #0a7396;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.barcode {
+  display: inline-block;
+  margin: 20px 40px 0 40px;
+}
