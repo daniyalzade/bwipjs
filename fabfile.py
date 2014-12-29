@@ -24,7 +24,7 @@ def git_pull(repo='/home/ubuntu/git/bwipjs'):
     Update git repo
     """
     with cd(repo):
-        sudo('git reset --hard HEAD && git pull', user='eytan')
+        run('git reset --hard HEAD && git pull')
 
 @task
 def deploy():
