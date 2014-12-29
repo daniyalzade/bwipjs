@@ -9,7 +9,7 @@
     padding: 10px;
 }
 
-.barcode-type a {
+a.barcode-type {
   display: block;
   color: #0a7396;
   margin-top: 10px;
