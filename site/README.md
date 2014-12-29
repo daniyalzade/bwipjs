@@ -1,3 +1,11 @@
+### TODO - Next Steps
+
+* Add the descriptions to the 3 cases
+* Maybe make the 3 cases white, and alternate afterwards
+* Put out a description of all the parameters, what is supported and what is not.
+* Explain what needs to be done to get started
+
+
 ### Deploying node application
 
 Using forever to do so.
