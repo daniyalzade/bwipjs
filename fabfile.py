@@ -18,6 +18,12 @@ def init_fab():
             ]
 
 @task
+def init():
+    with settings(warn_only=True):
+        sudo('apt-get install puppet')
+
+
+@task
 @parallel
 def git_pull(repo='/home/ubuntu/git/bwipjs'):
     """
