@@ -5,6 +5,17 @@
 // See the LICENSE file in the bwip.js root directory
 // for the extended copyright notice.
 
+/**
+ * @api {get} / Generate Barcode
+ * @apiVersion 1.0.0
+ * @apiName Generate Barcode
+ * @apiParam {String} bcid
+ * @apiParam {String} text
+ * @apiParam {Number} scale
+ * @apiParam {String} alttext
+ * @apiParam {String} rotate
+ */
+
 // The one and only global - our class constructor
 function BWIPJS() {
 	
