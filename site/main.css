@@ -9,6 +9,22 @@
     padding: 10px;
 }
 
+table th p{
+  display: inline-block;
+}
+
+.param {
+  display: inline-block;
+}
+
+.title {
+  text-align: center;
+}
+.param-meta {
+  display: inline-block;
+  font-weight: lighter;
+  margin-left: 10px;
+}
 a.barcode-type {
   display: block;
   color: #0a7396;

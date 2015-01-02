@@ -137,14 +137,78 @@
     <!-- ******DOCS****** --> 
     <section id="docs" class="docs section">
         <div class="container">
-            <div class="docs-inner">
-            <h2 class="title text-center">API Documentation</h2>            
-            <div class="block">
-                <p><strong>API Endpoint:</strong> http://api.barcodeapi.co</p>
-                <p><strong>Sample Request:</strong> <a href="http://api.barcodeapi.co/?bcid=ean13&text=0716037670016&scale=&parsefnc" target="_blank">http://api.barcodeapi.co/?bcid=ean13&text=0716037670016&scale=&parsefnc</a></p>
-            </div><!--//block-->
-            </div><!--//docs-inner-->         
-        </div><!--//container-->
+          <h2 class='title'> API Explorer </h2>
+            <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>
+            Parameter
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Description
+          </th>
+          <th>
+            Value
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th><p class='param'>bcid</p><p class='param-meta'> (required) </p></th>
+          <td>Enum</td>
+          <td>Barcode type. Possible types are ean-13, ean-8, code-128 and QR code</td>
+          <td>
+            <select id="barcodeTypeSelector" >
+              <option value="ean13">ean13</option>
+              <option value="ean8">ean8</option>
+              <option value="code128">code128</option>
+              <option value="qrcode">qrcode</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th><p class='param'>text</p><p class='param-meta'> (required) </p></th>
+          <td>String</td>
+          <td>GTIN to generate the barcode for</td>
+          <td><input id="textInput" placeholder="0716037670016"></td>
+        </tr>
+        <tr>
+          <th><p class='param'>scale</p><p class='param-meta'> (optional) </p></th>
+          <td>Number</td>
+          <td></td>
+          <td><input id="exampleInputPassword1" placeholder="ean-12"></td>
+        </tr>
+        <tr>
+          <th><p class='param'>alttext</p><p class='param-meta'> (optional) </p></th>
+          <td>String</td>
+          <td>The GTIN (or any other text) to display below the barcode</td>
+          <td><input id="alttextInput" placeholder="0-716037670016"></td>
+        </tr>
+        <tr>
+          <th><p class='param'>rotate</p><p class='param-meta'> (optional) </p></th>
+          <td>Enum</td>
+          <td>What rotation to apply to the barcode. Leave empty if no rotation is wanted</td>
+          <td>
+            <select id='rotationSelector'>
+              <option value="leftRotate">L</option>
+              <option value="rightRotate">R</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button id='generateBarcode' class="btn btn-primary" type="button">Generate Barcode</button>
+  </div>
+  <div class="highlight"><pre><code>Some code/text goes here</code></pre></div>
+  <div class="barcodes">
+    <div class='barcode'>
+      <img id='generatedBarcode' alt='ean-13 barcode' src="assets/images/ean-8.png"/>
+    </div>
+  </div><!--//container-->
     </section><!--//features-->
     
     
@@ -172,6 +236,28 @@
     <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script> 
     <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
     <script type="text/javascript" src="assets/js/main.js"></script>       
+    <script>
+      $(function() {
+        var onButtonClick = function() {
+          var url = 'http://api.barcodeapi.co?';
+
+          var params = {
+            bcid: $('#barcodeTypeSelector').val(),
+            text: $('#textInput').val() || $('#textInput').attr('placeholder'),
+            alttext: $('#alttextInput').val(),
+            scale: 2,
+          }
+          for (var key in params) {
+            if(params[key]) {
+              url += key + '=' + params[key] + '&';
+            }
+          }
+          $('.highlight code').html(url)
+          $('#generatedBarcode').attr('src', url);
+        }
+        $("#generateBarcode").click(onButtonClick);
+      });
+    </script>
 </body>
 </html> 
 
