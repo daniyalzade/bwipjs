@@ -17,3 +17,7 @@ Using forever to do so.
 
 ### Original Bootstrap Theme
 * http://themes.3rdwavemedia.com/demo/devaid/
+
+### Generate API Doc
+	apidoc -f "node-bwipjs" -o doc
+
