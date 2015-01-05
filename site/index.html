@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Barcode API: Free service for generating 1D / 2D barcodes">
+    <meta name="description" content="Barcode API: Free service for generating 1D / 2D barcodes. Supports UPC, EAN-12, EAN-8, Code128 and QR Code.">
     <meta name="author" content="Eytan Daniyalzade">    
     <meta name="google-site-verification" content="DammEvat8CtjQc_79E95J-Bdfqe_2_Pr5NMg_pPwjEc" />
     <link rel="shortcut icon" href="favicon.ico">  
@@ -61,8 +61,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active nav-item sr-only"><a class="scrollto" href="#promo">Home</a></li>
                         <li class="nav-item"><a class="scrollto" href="#about">About</a></li>
-                        <li class="nav-item"><a class="scrollto" href="#features">Examples</a></li>
-                        <li class="nav-item"><a class="scrollto" href="#docs">Docs</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#docs">API Explorer</a></li>
                         <li class="nav-item last"><a class="scrollto" href="#contact">Contact</a></li>
                     </ul><!--//nav-->
                 </div><!--//navabr-collapse-->
@@ -87,8 +86,8 @@
                         <i class="fa fa-barcode"></i>
                     </div>
                     <div class="content">
-                        <h3 class="sub-title">Generate Barcodes via API</h3>
-                        <p>Use this API to generate a PNG barcode for a <a href='http://en.wikipedia.org/wiki/Global_Trade_Item_Number' target="_blank">GTIN</a> you have. You can call it programmatically from your app or your website.</p>
+                        <h3 class="sub-title">Generate Barcodes Programmatically</h3>
+                        <p>Generate a PNG barcodes for your <a href='http://en.wikipedia.org/wiki/Global_Trade_Item_Number' target="_blank">Global Trade Identification Numbers (GTINs)</a> using this API. You can use the Barcode API from your app or your website.</p>
                     </div><!--//content-->
                 </div><!--//item-->
                 <div class="item col-md-4 col-sm-6 col-xs-12">
@@ -97,7 +96,7 @@
                     </div>
                     <div class="content">
                         <h3 class="sub-title">Supports All Formats</h3>
-                        <p> All formats including <a href='http://en.wikipedia.org/wiki/International_Article_Number_%28EAN%29' target="_blank">EAN-13</a>, <a href='http://en.wikipedia.org/wiki/EAN-8' target="_blank">EAN-8</a>, <a href='http://en.wikipedia.org/wiki/Code_128' target="_blank">Code-128</a> are supported.
+                        <p>The Barcode API supports all formats including <a href='http://en.wikipedia.org/wiki/International_Article_Number_%28EAN%29' target="_blank">EAN-13</a>, <a href='http://en.wikipedia.org/wiki/EAN-8' target="_blank">EAN-8</a>, <a href='http://en.wikipedia.org/wiki/Code_128' target="_blank">Code-128</a> and QR Codes. If you find unsupported formats, feel free to <a class="scrollto" href='#contact'>contact us</a>.
                     </div><!--//content-->
                 </div><!--//item-->
                 <div class="item col-md-4 col-sm-6 col-xs-12">
@@ -105,8 +104,8 @@
                         <i class="fa fa-gift"></i>
                     </div>
                     <div class="content">
-                        <h3 class="sub-title">Absolutely Free</h3>
-                        <p>We are opening this service since something like this should exist on the internet. It is simple to support and maintain, and we will never charge for this.</p>
+                        <h3 class="sub-title">Absolutely Free. Forever.</h3>
+                        <p>The Barcode API is free because such a service should exist on the internet. It is simple to support and maintain, and we will never charge for its usage.</p>
                     </div><!--//content-->
                 </div><!--//item-->           
             </div><!--//row-->            
@@ -114,27 +113,6 @@
     </section><!--//about-->
     
     <!-- ******FEATURES****** --> 
-    <section id="features" class="features section">
-        <div class="container text-center">
-            <h2 class="title">Examples</h2>
-            <div class="barcodes">
-              <div class='barcode'>
-                <a href="http://api.barcodeapi.co/?bcid=ean13&text=0716037670016&scale=&parsefnc" target="_blank"><img alt='ean-13 barcode' src="assets/images/ean-13.png"/></a>
-                <a class='barcode-type' href="http://api.barcodeapi.co/?bcid=ean13&text=0716037670016&scale=&parsefnc" target="_blank">EAN-13 / UPC-A</a>
-              </div>
-              <div class='barcode'>
-                <a href="http://api.barcodeapi.co/?bcid=code128&text=wikipedia&scale=&parsefnc" target="_blank"><img alt='ean-8 barcode' src="assets/images/ean-8.png"/></a>
-                <a class='barcode-type' href="http://api.barcodeapi.co/?bcid=ean8&text=65833254&scale=&parsefnc" target="_blank">EAN-8</a>
-              </div>
-              <div class='barcode'>
-                <a href="http://api.barcodeapi.co/?bcid=code128&text=wikipedia&scale=&parsefnc" target="_blank"><img alt='code-128 barcode' src="assets/images/code-128.png"/></a>
-                <a class='barcode-type' href="http://api.barcodeapi.co/?bcid=code128&text=wikipedia&scale=&parsefnc" target="_blank">Code-128</a>
-              </div>
-            </div>
-        </div><!--//container-->
-    </section><!--//features-->
-    
-    <!-- ******DOCS****** --> 
     <section id="docs" class="docs section">
         <div class="container">
           <h2 class='title'> API Explorer </h2>
@@ -158,7 +136,7 @@
       </thead>
       <tbody>
         <tr>
-          <th><p class='param'>bcid</p><p class='param-meta'> (required) </p></th>
+          <th><p class='param'>bcid</p></th>
           <td>Enum</td>
           <td>Barcode type. Possible types are ean-13, ean-8, code-128 and QR code</td>
           <td>
@@ -171,46 +149,49 @@
           </td>
         </tr>
         <tr>
-          <th><p class='param'>text</p><p class='param-meta'> (required) </p></th>
+          <th><p class='param'>text</p></th>
           <td>String</td>
-          <td>GTIN to generate the barcode for</td>
+          <td>Global trade identification number (GTIN) to generate the barcode for.</td>
           <td><input id="textInput" placeholder="0716037670016"></td>
         </tr>
         <tr>
-          <th><p class='param'>scale</p><p class='param-meta'> (optional) </p></th>
+          <th><p class='param'>scale</p><p class='param-meta'> optional </p></th>
           <td>Number</td>
-          <td></td>
-          <td><input id="exampleInputPassword1" placeholder="ean-12"></td>
+          <td>The scale factor to change the size of the generated barcode. Possible values are 1-10.</td>
+          <td><input id="scaleInput" placeholder="2"></td>
         </tr>
         <tr>
-          <th><p class='param'>alttext</p><p class='param-meta'> (optional) </p></th>
+          <th><p class='param'>alttext</p><p class='param-meta'> optional </p></th>
           <td>String</td>
           <td>The GTIN (or any other text) to display below the barcode</td>
           <td><input id="alttextInput" placeholder="0-716037670016"></td>
         </tr>
         <tr>
-          <th><p class='param'>rotate</p><p class='param-meta'> (optional) </p></th>
+          <th><p class='param'>rotate</p><p class='param-meta'> optional </p></th>
           <td>Enum</td>
-          <td>What rotation to apply to the barcode. Leave empty if no rotation is wanted</td>
+          <td>What rotation to apply to the barcode. Possible values are: N (no-rotation, default), R (90 rotation), L (counter-clockwise 90 rotation), I inverted.</td>
           <td>
             <select id='rotationSelector'>
-              <option value="leftRotate">L</option>
-              <option value="rightRotate">R</option>
+              <option value="N">N</option>
+              <option value="R">R</option>
+              <option value="L">L</option>
+              <option value="I">I</option>
             </select>
           </td>
         </tr>
       </tbody>
     </table>
-    <button id='generateBarcode' class="btn btn-primary" type="button">Generate Barcode</button>
   </div>
-  <div class="highlight"><pre><code>Some code/text goes here</code></pre></div>
+  <div class='row center-block'>
+    <button id='generateBarcode' class="btn btn-primary center-block" type="button">Generate Barcode</button>
+  <div class="highlight"><pre><code>Sample Barcode API request</code></pre></div>
   <div class="barcodes">
-    <div class='barcode'>
-      <img id='generatedBarcode' alt='ean-13 barcode' src="assets/images/ean-8.png"/>
+    <div class='barcode center-block'>
+      <img class='center-block' id='generatedBarcode' alt='ean-13 barcode' src="assets/images/ean-8.png"/>
     </div>
-  </div><!--//container-->
+  </div>
+  </div>
     </section><!--//features-->
-    
     
     <!-- ******CONTACT****** --> 
     <section id="contact" class="contact section has-pattern">
@@ -239,13 +220,14 @@
     <script>
       $(function() {
         var onButtonClick = function() {
-          var url = 'http://api.barcodeapi.co?';
+          var url = 'http://localhost:3030?';
 
           var params = {
             bcid: $('#barcodeTypeSelector').val(),
             text: $('#textInput').val() || $('#textInput').attr('placeholder'),
             alttext: $('#alttextInput').val(),
-            scale: 2,
+            scale: $('#scaleInput').val() || $('#scaleInput').attr('placeholder'),
+            rotate: $('#rotationSelector').val(),
           }
           for (var key in params) {
             if(params[key]) {
@@ -256,6 +238,7 @@
           $('#generatedBarcode').attr('src', url);
         }
         $("#generateBarcode").click(onButtonClick);
+        onButtonClick();
       });
     </script>
 </body>
