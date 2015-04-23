@@ -63,6 +63,7 @@
 var url = require('url');
 var fs  = require('fs');
 var vm  = require('vm');
+var util = require('util');
 
 
 function load(path) {
@@ -93,6 +94,14 @@ module.exports = function(req, res) {
 		return error(res, 404, 'Unknown request format.\r\n');
 
 	var args = url.parse(req.url, true).query;
+	var margin   = args.margin || '0';
+    margin = Number(margin);
+    if (margin) {
+      res.writeHead(200, {"Content-Type": "text/html"});
+      var css = util.format("style='margin: %s'", margin);
+      var imgUrl = req.url.replace('margin', 'mar');
+      res.end(util.format("<img %s src='%s'></img>", css, imgUrl));
+    }
 
 	// Set the defaults
 	var scale = Math.min(parseInt(args.scale, 10) || 2, 10);
