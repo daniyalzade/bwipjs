@@ -224,7 +224,7 @@
 
           var params = {
             bcid: $('#barcodeTypeSelector').val(),
-            text: $('#textInput').val() || $('#textInput').attr('placeholder'),
+            text: encodeURIComponent($('#textInput').val() || $('#textInput').attr('placeholder')),
             alttext: $('#alttextInput').val(),
             scale: $('#scaleInput').val() || $('#scaleInput').attr('placeholder'),
             rotate: $('#rotationSelector').val(),
